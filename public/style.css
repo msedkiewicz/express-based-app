@@ -1,4 +1,19 @@
 h1 {
-    font-weight: lighter;
-    font-style: italic;
-  }
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.dark {
+  background-color: #000000;
+  color: #a0a0a0;
+  text-align: center;
+}
+
+.dark a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.dark a:hover {
+  color: red;
+}
