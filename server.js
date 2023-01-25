@@ -1,7 +1,10 @@
 const express = require("express");
 const path = require("path");
-
 const app = express();
+const hbs = require("express-handlebars");
+
+app.engine(".hbs", hbs());
+app.set("view engine", ".hbs");
 
 app.use((req, res, next) => {
   res.show = (name) => {
@@ -32,7 +35,7 @@ app.get("/history", (req, res, next) => {
   res.show("history.html");
 });
 
-app.get('/hello/:name', (req, res) => {
+app.get("/hello/:name", (req, res) => {
   res.send(`Hello ${req.params.name}`);
 });
 
