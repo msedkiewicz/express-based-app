@@ -38,8 +38,17 @@ app.get("/history", (req, res) => {
   res.render("history");
 });
 
-app.post("/contact/send-message", (req, res) => {
-  res.json(req.body);
+app.post('/contact/send-message', (req, res) => {
+
+  const { author, sender, title, message } = req.body;
+
+  if(author && sender && title && message) {
+    res.send('The message has been sent!');
+  }
+  else {
+    res.send('You can\'t leave fields empty!')
+  }
+
 });
 
 app.use((req, res) => {
