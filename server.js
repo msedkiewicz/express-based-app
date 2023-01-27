@@ -45,7 +45,7 @@ app.get("/hello/:name", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.render("about", { layout: "dark" });
+  res.render("about", { isDark: true, layout: "dark" });
 });
 
 app.get("/contact", (req, res) => {
